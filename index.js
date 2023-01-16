@@ -43,6 +43,12 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) => {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.write("<h1>Hello from Express.js!</h1>");
+  res.write("<h2>Servire is Running</h2>");
+  res.end();
+});
 app.use("/api/v1", apiRoute);
 
 mongoose
